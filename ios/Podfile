@@ -24,7 +24,6 @@ target 'NotificationExpoTest' do
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
     pod 'React-Core', :modular_headers => true
-    pod 'RNNotifee'
 
   use_react_native!(
     :path => config[:reactNativePath],
