@@ -16,7 +16,7 @@ end
 
 target 'NotificationExpoTest' do
   config = use_native_modules!
-
+  pod 'GoogleUtilities', :modular_headers => true
   pod 'FirebaseCoreInternal', :modular_headers => true
 
   use_react_native!(
