@@ -19,7 +19,7 @@ target 'NotificationExpoTest' do
 
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
-    pod 'Notifee'
+    pod 'Notifee', '~> 9.1.8'
 
   use_react_native!(
     :path => config[:reactNativePath],
