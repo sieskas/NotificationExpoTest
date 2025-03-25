@@ -1,10 +1,7 @@
 import UIKit
-import React_Core
+import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
-import UserNotifications
-import Firebase
-import Notifee
 
 @main
 class AppDelegate: RCTAppDelegate {
@@ -16,35 +13,18 @@ class AppDelegate: RCTAppDelegate {
     // They will be passed down to the ViewController used by React Native.
     self.initialProps = [:]
 
-    // Initialisation de Firebase
-    if FirebaseApp.app() == nil {
-        FirebaseApp.configure()
-    }
-
-    // Demande de permission pour les notifications
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-        if granted {
-            print("Notification permission granted")
-        } else {
-            print("Notification permission denied")
-        }
-    }
-
-    // Initialisation de Notifee
-    Notifee.configure()
-
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 
   override func sourceURL(for bridge: RCTBridge) -> URL? {
-    return self.bundleURL()
+    self.bundleURL()
   }
 
   override func bundleURL() -> URL? {
-    #if DEBUG
-        return RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
-    #else
-        return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
-    #endif
+#if DEBUG
+    RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index")
+#else
+    Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+#endif
   }
 }
