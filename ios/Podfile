@@ -17,6 +17,10 @@ end
 target 'NotificationExpoTest' do
   config = use_native_modules!
 
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
+    pod 'Notifee'
+
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.

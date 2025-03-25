@@ -49,11 +49,12 @@ export async function requestUserPermission(): Promise<boolean> {
         authStatus === messaging.AuthorizationStatus.PROVISIONAL;
 
     if (enabled) {
-        console.log('Authorization status:', authStatus);
+        console.log('Permission granted');
         return true;
+    } else {
+        console.log('Permission denied');
+        return false;
     }
-    console.log('Permission refusée');
-    return false;
 }
 
 // Obtenir et stocker le token FCM
