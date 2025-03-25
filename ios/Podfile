@@ -14,9 +14,13 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+use_frameworks! :linkage => :static
+
 target 'NotificationExpoTest' do
   config = use_native_modules!
 
+    pod 'GoogleUtilities', :modular_headers => true
+    pod 'FirebaseCoreInternal', :modular_headers => true
     pod 'Firebase/Core'
     pod 'Firebase/Messaging'
 
