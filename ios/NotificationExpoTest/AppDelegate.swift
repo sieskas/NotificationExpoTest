@@ -1,5 +1,5 @@
 import UIKit
-import React
+import React_Core
 import UserNotifications
 import Firebase
 import Notifee
