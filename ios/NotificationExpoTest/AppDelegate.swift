@@ -1,7 +1,5 @@
 import UIKit
 import React
-import React_RCTAppDelegate
-import ReactAppDependencyProvider
 import UserNotifications
 import Firebase
 import Notifee
