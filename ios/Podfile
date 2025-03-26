@@ -15,12 +15,11 @@ if linkage != nil
 end
 
 target 'NotificationExpoTest' do
-  config = use_native_modules!
-
 pod 'Firebase', :modular_headers => true
 pod 'FirebaseCore', :modular_headers => true
 pod 'FirebaseCoreInternal', :modular_headers => true
 pod 'GoogleUtilities', :modular_headers => true
+  config = use_native_modules!
 
 $RNFirebaseAsStaticFramework = true
   use_react_native!(
