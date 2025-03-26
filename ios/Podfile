@@ -19,9 +19,6 @@ target 'NotificationExpoTest' do
 
   pod 'FirebaseCoreInternal', :modular_headers => true
   pod 'GoogleUtilities', :modular_headers => true
-    pod 'React-Core', :path => '../node_modules/react-native'
-    pod 'React', :path => '../node_modules/react-native'
-    pod 'React-Codegen', :path => '../node_modules/react-native/ReactCommon/react/renderer/components/codegen'
 
   use_react_native!(
     :path => config[:reactNativePath],
